@@ -46,5 +46,6 @@ jobs:
       ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
+      - run: dir
       - run: bash test.sh
 #!! # base - .github/workflows/ci.yml - end
