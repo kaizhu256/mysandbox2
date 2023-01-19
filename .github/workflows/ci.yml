@@ -15,6 +15,9 @@ jobs:
   job1:
     runs-on: windows-latest
     steps:
-      - run: dir
-      - run: bash ./test.sh
+      - run: |
+          bash -c '(
+              ls -la
+              echo $PWD
+          )'
 #!! # base - .github/workflows/ci.yml - end
