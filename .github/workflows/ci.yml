@@ -1,0 +1,50 @@
+# this workflow will run nodejs coverages and tests
+# and upload build-artifacts to branch-gh-pages
+name: ci
+on:
+  push:
+    branches:
+      - alpha
+      # - beta
+      # - master
+  workflow_dispatch:
+env:
+  # MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+  zzzz1234: 1
+jobs:
+
+
+  job1:
+    strategy:
+      matrix:
+        architecture:
+          # - arm64
+          - x64
+          # - x86
+        node_version:
+          # - 16
+          - 18
+          # - 19
+        os:
+          # - macos-latest
+          # - ubuntu-latest
+          - windows-latest
+#!! # base - .github/workflows/ci.yml - beg
+    env:
+      CI_MATRIX_NAME: >
+        node
+        v${{ matrix.node_version }}
+        ${{ matrix.architecture }}
+        ${{ matrix.os }}
+      CI_MATRIX_NAME_MAIN: "node v18 x64 ubuntu-latest"
+      CI_MATRIX_NODE_VERSION: v${{ matrix.node_version }}
+      CI_MATRIX_NODE_VERSION_MAIN: v18
+    name: >
+      node
+      v${{ matrix.node_version }}
+      ${{ matrix.architecture }}
+      ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+        sh .github/workflows/test.sh
+#!! # base - .github/workflows/ci.yml - end
