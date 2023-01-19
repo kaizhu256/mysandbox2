@@ -15,14 +15,21 @@ jobs:
   job1:
     runs-on: windows-latest
     steps:
-      #!! - uses: actions/checkout@v3
-      #!! - run: sh test.sh
-      - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-      - run: echo $Env:PROGRAMDATA
-      - run: dir $Env:PROGRAMDATA
-      - run: dir $Env:PROGRAMDATA\ssh
-      - run: type $Env:PROGRAMDATA\ssh\sshd_config
-      - run: Start-Service sshd
+      - uses: actions/checkout@v3
+      - run: sh test.sh
+      #!! - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+      #!! #!! - run: echo $Env:PROGRAMDATA
+      #!! #!! - run: dir $Env:PROGRAMDATA
+      #!! #!! - run: dir $Env:PROGRAMDATA\ssh
+      #!! - run: |
+          #!! echo '
+            #!! PubkeyAuthentication yes
+            #!! AuthorizedKeysFile	.ssh/authorized_keys
+            #!! StrictModes no
+          #!! ' > C:\programdata\ssh\sshd_config
+      #!! - run: type C:\programdata\ssh\sshd_config
+      #!! - run: Start-Service sshd
+      #!! - run:
       #!! - run: netsh advfirewall firewall add rule name="Open Port 22" dir=in action=allow protocol=TCP localport=22
       #!! - run: ssh runneradmin@localhost dir
 #!! # base - .github/workflows/ci.yml - end
