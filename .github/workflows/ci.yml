@@ -16,5 +16,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - run: sh -c test.sh
+      - run: sh test.sh
 #!! # base - .github/workflows/ci.yml - end
