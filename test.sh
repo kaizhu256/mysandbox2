@@ -8,7 +8,6 @@ echo '
 AuthorizedKeysFile	.ssh/authorized_keys
 PasswordAuthentication no
 PubkeyAuthentication yes
-StrictModes no
 ' > /c/programdata/ssh/sshd_config
 cat /c/programdata/ssh/sshd_config
 powershell 'Start-Service sshd'
