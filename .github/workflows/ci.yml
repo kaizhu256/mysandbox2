@@ -15,6 +15,8 @@ jobs:
   job1:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: sh test.sh
+      #!! - uses: actions/checkout@v3
+      #!! - run: sh test.sh
+      - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+      - run: ssh runneradmin@localhost dir
 #!! # base - .github/workflows/ci.yml - end
