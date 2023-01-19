@@ -7,6 +7,7 @@ powershell 'Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0'
 echo '
 PubkeyAuthentication yes
 AuthorizedKeysFile	.ssh/authorized_keys
+StrictModes no
 ' > /c/programdata/ssh/sshd_config
 cat /c/programdata/ssh/sshd_config
 powershell 'Start-Service sshd'
