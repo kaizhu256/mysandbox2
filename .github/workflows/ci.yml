@@ -15,13 +15,6 @@ jobs:
   job1:
     runs-on: windows-latest
     steps:
-      - run: |
-          bash -c '(
-          uname
-          ls -la
-          echo $PWD
-          echo aa
-          ssh runneradmin@localhost dir
-          echo bb
-          )'
+      - uses: actions/checkout@v3
+      - run: sh -c test.sh
 #!! # base - .github/workflows/ci.yml - end
