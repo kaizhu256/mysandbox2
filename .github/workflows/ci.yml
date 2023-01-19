@@ -17,11 +17,9 @@ jobs:
     steps:
       #!! - uses: actions/checkout@v3
       #!! - run: sh test.sh
-      - run: |
-          dir
-          dir
-      #!! - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-      #!! - run: Start-Service sshd
-      #!! #!! - run: netsh advfirewall firewall add rule name="Open Port 22" dir=in action=allow protocol=TCP localport=22
-      #!! - run: ssh runneradmin@localhost dir
+      - run: type C:\ProgramData\ssh\sshd_config
+      - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+      - run: Start-Service sshd
+      #!! - run: netsh advfirewall firewall add rule name="Open Port 22" dir=in action=allow protocol=TCP localport=22
+      - run: ssh runneradmin@localhost dir
 #!! # base - .github/workflows/ci.yml - end
