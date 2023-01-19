@@ -17,7 +17,8 @@ jobs:
     steps:
       #!! - uses: actions/checkout@v3
       #!! - run: sh test.sh
-      - run: type \ProgramData\ssh\sshd_config
+      - run: echo $Env:PROGRAMDATA
+      - run: type $Env:PROGRAMDATA\ssh\sshd_config
       - run: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
       - run: Start-Service sshd
       #!! - run: netsh advfirewall firewall add rule name="Open Port 22" dir=in action=allow protocol=TCP localport=22
