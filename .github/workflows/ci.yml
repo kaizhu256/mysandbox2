@@ -17,7 +17,11 @@ jobs:
     steps:
       - run: |
           bash -c '(
-              ls -la
-              echo $PWD
+          uname
+          ls -la
+          echo $PWD
+          echo aa
+          ssh runneradmin@localhost dir
+          echo bb
           )'
 #!! # base - .github/workflows/ci.yml - end
