@@ -5,7 +5,6 @@ echo $PWD
 #!! powershell "Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'"
 powershell 'Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0'
 echo '
-AuthorizedKeysFile	.ssh/authorized_keys
 PasswordAuthentication no
 PubkeyAuthentication yes
 ' > /c/programdata/ssh/sshd_config
