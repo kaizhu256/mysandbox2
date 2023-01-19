@@ -18,6 +18,8 @@ jobs:
       #!! - uses: actions/checkout@v3
       #!! - run: sh test.sh
       - run: echo $Env:PROGRAMDATA
+      - run: dir $Env:PROGRAMDATA
+      - run: dir $Env:PROGRAMDATA\ssh
       - run: dir \programdata
       - run: dir \programdata\ssh
       - run: type $Env:PROGRAMDATA\ssh\sshd_config
