@@ -15,6 +15,7 @@ powershell 'Start-Service sshd'
 
 cd ~/.ssh
 ssh-keygen -C "your_email@example.com" -N "" -f ~/.ssh/id_ed25519 -t ed25519
+ls -la ~/.ssh
 cp id_ed25519.pub authorized_keys
 #!! powershell 'netsh advfirewall firewall add rule name="Open Port 22" dir=in action=allow protocol=TCP localport=22'
 
